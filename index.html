@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    <style> body{
+  background-image:url("bgimg.jpeg")
+  /*url(https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80)*/;
+  background-size: 125%;
+  background-repeat: no-repeat;
+  color:white;
+  font-family: 'Overpass', sans-serif !important;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+#mainwrap{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width:100vw;
+  height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+ /* position: absolute;*/
+ /* left:50%; */
+  z-index: 1;
+  font-family: 'Overpass', sans-serif;
+  margin-top: 0px;
+
+}
+#wrapper{
+  background-color: rgba(0,0,0,0.1);
+    width:50vw;
+    height: 100vh;
+    position: absolute;
+    left:50%;
+    z-index: -1;
+
+}
+.same{
+  width:30vw;
+  height:40px;
+  display: inline-block;
+  margin: 5px;
+  margin-top: 10vh;
+  text-align: center;
+  background-color: transparent;
+  color:white;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+  caret-color: #9ecaed;
+  font-family: 'Overpass', sans-serif;
+
+}
+.same:focus{
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+#submitBtn{
+  width: 40vw;
+  height:40px;
+  margin: 10px;
+  border: 2px solid #dadada;
+  border-radius: 7px;
+  background-color: #9ecaed;
+  border:none;
+  font-family: 'Overpass', sans-serif;
+
+}
+#submitBtn:hover{
+      outline: none;
+      border-color: #9ecaed;
+      box-shadow: 0 0 10px #9ecaed;
+}
+
+#output{
+  font-size: 30px;
+  margin: 20px;
+ 
+}
+
+#adib {
+  position: fixed;
+  bottom: 0vw;
+  width: 100vw;
+  text-align: center;
+  padding: 2vw;
+  background-color:rgba(255,255,255,0.4);
+  color: white;
+}
+
+#adit {
+  position: fixed;
+  top: 0vw;
+  width: 100vw;
+  text-align: center;
+  padding: 2vw;
+  background-color:rgba(255,255,255,0.4);
+  color: white;
+  font-size: 20px;
+}
+::placeholder{
+  color:white;
+}
+
+/*
+.glowing-border {
+  border: 2px solid #dadada;
+  border-radius: 7px;
+}
+
+.glowing-border:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}*/ </style>
+</head>
+
+<body>
+<div id="wrapper"></div>
+     <header id="adit">
+       Bigger Number Identifier
+     </header>
+<div id="mainwrap">
+<input type="number" class="same" id="inputVal1" placeholder="Num 1"/>
+<input type="number" class="same" id="inputVal2" placeholder="Num 2"/>
+<input type="submit" id="submitBtn" value="Let's Compare" />
+<div id="output">The Output Will Displayed Here</div>
+  </div>
+    <footer id="adib">
+      Made By Aditya Vaste<br>
+      © 2020
+    </footer>
+<script src="main.js"></script>
+<script>console.log('Hello World');
+
+let task = document.getElementById('submitBtn').addEventListener('click', fun1);
+
+function fun1() {
+
+  var input1 = document.getElementById('inputVal1').value;
+  var input2 = document.getElementById('inputVal2').value;
+
+  let mathM = Math.max(input1, input2);
+  document.getElementById('output').innerText =mathM;
+  
+  
+  if (input1 == input2) {
+    document.getElementById('output').innerText = 'Both The Number Are Same';
+  }
+ } 
+  </script>
+</body>
+
+</html>
